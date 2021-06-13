@@ -17,11 +17,18 @@ function FormikContainer() {
     { key: "Option 3", value: "option3" },
   ];
 
+  const checkOptions = [
+    { key: "cOption 1", value: "cOption1" },
+    { key: "cOption 2", value: "cOption2" },
+    { key: "cOption 3", value: "cOption3" },
+  ];
+
   const initialValues = {
     email: "",
     description: "",
     ipOptions: "",
     radioOptions: "",
+    checkOptions: [],
   };
 
   const onSubmit = (values) => console.log("Submitted values: ", values);
@@ -68,7 +75,19 @@ function FormikContainer() {
               name="radioOptions"
               options={radioOptions}
             />
+            <FormikControl
+              control="textarea"
+              label="description"
+              name="description2"
+              id="description"
+            />
 
+            <FormikControl
+              control="checkbox"
+              label="check options"
+              name="checkOptions"
+              options={checkOptions}
+            />
             <button type="submit">Submit</button>
           </Form>
         );
